@@ -1,15 +1,8 @@
 const { defineConfig } = require("cypress");
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
-  integration: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
-  },
-
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+      baseUrl: 'https://react-redux.realworld.io'
   },
 });

@@ -1,57 +1,43 @@
-@Conduit
+@ConduitApp
 
-Feature: Manual test cases for Conduit App  
+Feature: Users can log in, create new posts and follow other profiles
 
 Background:
-  * User is logged in 
+  * User has an account created
+  * User is on the Conduit Homepage
 
-Scenario Outline: Users can create a post
-  Given the user is on the 'New Post' page
-  When the user creates a new post
-  Then it will be visible on the 'Global Feed'
-
-Scenario: Users can update their personal settings
-  Given the user is on the 'Settings' page
-  When the user updates their <settings>
-  Then they will be updated successfully
+@LogIn
+Scenario Outline: Users can log in
+  Given the user navigates to the "Sign In" page
+  When the user enters valid <credentials>
+  And clicks the 'Sign in' button
+  Then the user will be redirected to the "Your Feed" page
 
   Examples: 
-    | settings      |
-    | profile photo |
-    | username      |
-    | bio           |
+    | credentials   |
     | email         |
     | password      |
 
-Scenario: Users can sign up
-  Given the user is on the 'Sign Up' page
-  When the user enters valid credientials
-  Then they can create an account successfully
-
-Scenario: Users can't sign up with invalid credientials
-  Given the user is on the 'Sign In' page
-  When the user enters valid credientials
-  Then they can create an account successfully
-
-Scenario: Users can view posts on Global Feed
-  Given the user is on the 'Global Feed' page
-  When the user views a post 
-  Then the post <atrributes> will be visible
+@CreatePost
+Scenario Outline: Users can create a post
+  Given the user is logged in
+  And they navigate to the "New Post" page
+  When the user enters the article <atrributes>
+  And clicks the "Publish Article" button
+  Then the article will be visible on the "Global Feed" page
 
   Examples: 
     | atrributes  |
-    | image       |
-    | username    |
-    | createDate  |
     | title       |
     | subtitle    |
-    | read more.. |
-    | favourites  |
-    | tags        |
+    | description |
+    | tag         |
 
-
-Scenario: User can view and follow profiles
-  Given the user is on the 'Global Feed' page
+@FollowProfile
+Scenario: Users can follow other profiles
+  Given the user is logged in
+  And they navigate to the "Global Feed" page
   When the user clicks on a username
-  Then the user will be taken to the profile page
-  And they can follow it
+  And clicks the "Follow" button
+  Then the user will see articles on the "Your Feed" page
+  And the articles will be from the followed profile

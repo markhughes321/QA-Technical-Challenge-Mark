@@ -2,7 +2,7 @@
 
 describe('Successful Login', () => {
   it('Navigates to the Conduit Homepage', () => {
-    cy.visit('https://react-redux.realworld.io')
+    cy.visit('/')
   })
 
   it('Clicks the "Sign In" menu item', () => {

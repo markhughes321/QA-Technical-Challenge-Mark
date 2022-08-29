@@ -20,7 +20,7 @@ Please read below for the context and instructions.
 
 ### Bonus Points 💰
 1. Include a negative test and and api test
-1. Add your framework GitHib Actions
+1. Add your framework GitHub Actions
 
 ### Tips
 1. Don't over complicate things

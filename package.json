@@ -19,9 +19,6 @@
   },
   "homepage": "https://github.com/jhads/QA-Technical-Challenge#readme",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^12.0.1",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
-    "cypress": "^10.6.0",
-    "esbuild": "^0.15.5"
+    "cypress": "^10.6.0"
   }
 }

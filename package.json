@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+
   },
   "repository": {
     "type": "git",

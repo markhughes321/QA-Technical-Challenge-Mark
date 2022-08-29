@@ -13,7 +13,7 @@ describe('Create a New Post', () => {
     cy.contains('New Post').click()
   })
 
-  it('Enters article information', () => {
+  it('Enters article info', () => {
     cy.get('[placeholder="Article Title"]').type(`articleTitle${id}`)
     cy.get('[placeholder*="this article about?"]').type(`articleSubtitle${id}`)
     cy.get('[placeholder*="Write your article"]').type(`articleDescription${id}`)

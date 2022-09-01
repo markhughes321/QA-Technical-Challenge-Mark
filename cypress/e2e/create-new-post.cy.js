@@ -8,7 +8,7 @@ describe('Create a New Post', () => {
     cy.logIn()
   })
 
-  it('Navigates to the "New Post" page', () => {
+  it('Navigates to the New Post page', () => {
     cy.visit('/')
     cy.contains('New Post').click()
   })
